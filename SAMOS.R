@@ -124,7 +124,7 @@ for (i in index){
 print(r)
 print(s)
 head(predicted)
-write.csv(predicted, './data/Predictions.csv')
+write.csv(predicted, './data/Climatology.csv')
 write.csv(r, './data/Coefficients.csv')
 write.csv(s, './data/CoefficientsSigma.csv')
 
