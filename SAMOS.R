@@ -56,14 +56,14 @@ for (i in index){
     fg_sd = data4[,i],
     obs_sd = data4[,(i+1)]
   )
-  
+  # Only pick values before 2020, cross validation needs to exclude 2020
   train <- data.frame(
-    fg = data3$fg,
-    obs = data3$obs,
-    day = data3$day,
-    hour = data3$hour,
-    fg_sd = log(data3$fg_sd),
-    obs_sd = data3$obs_sd
+    fg = data3$fg[0:36240],
+    obs = data3$obs[0:36240],
+    day = data3$day[0:36240],
+    hour = data3$hour[0:36240],
+    fg_sd = log(data3$fg_sd[0:36240]),
+    obs_sd = data3$obs_sd[0:36240]
   )
   
   train = na.omit(train)
